@@ -6,8 +6,11 @@ import people from "../image/peoples.png";
 import image1 from "../image/image1.avif";
 import image2 from "../image/image2.webp";
 import image3 from "../image/image3.avif";
+import punjabi from "../image/punjabi.avif";
+import girl from "../image/girl.avif";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaRegDotCircle } from "react-icons/fa";
 import contact from "../image/contact.png";
 import fan from "../image/fan.png";
 import stati from "../image/static.png";
@@ -483,7 +486,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-5 mx-5" style={{ height: "600px" }}>
+      <div className="mt-5 mx-5" style={{ height: "700px" }}>
         <div
           className=" row  d-flex justify-content-between"
           style={{ height: "130px" }}
@@ -518,7 +521,78 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className=" mt-3">
+          <div className="row gx-3 " style={{ height: "400px" }}>
+            <div className="col-7 h-100">
+              <div className="h-100">
+                <img
+                  src={punjabi}
+                  className="object-fit-cover w-100  h-100 rounded-4"
+                />
+              </div>
+            </div>
+            <div className="col-5 h-100">
+              <div className="h-100">
+                <img
+                  src={girl}
+                  className="object-fit-cover w-100 h-100 rounded-4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5" style={{ height: "100px" }}>
+          <div className="row h-100">
+            <div className="col-5 d-flex flex-column justify-content-center">
+              <h2 className="fw-semibold mt-2">
+                Where Connections Thrive and Ideas Flourish{" "}
+                <span style={{ color: "#028CBB" }}>✦</span> 2x
+              </h2>
+            </div>
+            <div
+              className="col-7 h-100"
+              style={{ color: "#4B5563", fontWeight: "500" }}
+            >
+              <div className="h-100 d-flex justify-content-end">
+                <div
+                  style={{ width: "28%", backgroundColor: "#F7F5F5" }}
+                  className="border h-100  rounded-4 d-flex flex-wrap justify-content-center align-content-center div2Hover"
+                >
+                  <span className="d-flex flex-wrap align-content-center justify-content-end w-25">
+                    <FaRegDotCircle />
+                  </span>
+                  <span className="w-75 p-3"> Happy Community</span>
+                </div>
+                <div
+                  style={{ width: "28%", backgroundColor: "#F7F5F5" }}
+                  className="border h-100  mx-4 rounded-4 d-flex flex-wrap justify-content-center align-content-center div2Hover"
+                >
+                  <span className="d-flex flex-wrap align-content-center justify-content-end  w-25">
+                    <FaRegDotCircle />
+                  </span>
+                  <span className="w-75 p-3">210% Boost in Engagement</span>
+                </div>
+                <div
+                  style={{ width: "28%", backgroundColor: "#F7F5F5" }}
+                  className="border h-100 rounded-4 d-flex flex-wrap justify-content-center align-content-center div2Hover"
+                >
+                  <span className="d-flex flex-wrap align-content-center justify-content-end w-25">
+                    <FaRegDotCircle />
+                  </span>
+                  <span className="w-75 p-3">172+ Ranked Communities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div
+        className="mt-5"
+        style={{ height: "500px", backgroundColor: "#242839" }}
+      ></div>
     </div>
   );
 };

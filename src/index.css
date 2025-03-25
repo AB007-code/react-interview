@@ -98,3 +98,7 @@
   transform: rotate(90deg);
   transition: all 0.3s linear 0s;
 }
+.div2Hover:hover {
+  transform: translate(0px, -5px);
+  box-shadow: 0px 5px 5px rgba(215, 214, 214, 0.732);
+}
