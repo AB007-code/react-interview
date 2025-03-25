@@ -43,3 +43,58 @@
   transform: rotate(90deg);
   transition: all 0.3s linear 0s;
 }
+.btnHover {
+  transition: all 0.3s linear 0s;
+}
+.btnHover:hover {
+  transform: translate(0px, -2px);
+  transition: all 0.3s linear 0s;
+  box-shadow: 0 4px 10px 0 rgba(80, 79, 79, 0.869),
+    0 6px 20px 0 rgba(80, 79, 79, 0.869);
+}
+.btnHover:hover .iconMove {
+  transform: rotate(90deg);
+  transition: all 0.3s linear 0s;
+}
+.modalDiv {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  padding-top: auto;
+  background-color: #a09d9dc7;
+}
+.childDiv {
+  position: fixed;
+  top: 15%;
+  left: 30%;
+  height: 430px;
+  width: 50%;
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: #262525;
+}
+.div1Hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.div1Hover:hover {
+  background: rgb(16, 218, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+.div1Hover:hover .iconMove {
+  transform: rotate(90deg);
+  transition: all 0.3s linear 0s;
+}
