@@ -7,7 +7,20 @@ import image1 from "../image/image1.avif";
 import image2 from "../image/image2.webp";
 import image3 from "../image/image3.avif";
 import punjabi from "../image/punjabi.avif";
+import worldPeople from "../image/worldPeople.avif";
 import girl from "../image/girl.avif";
+import bulkImg0 from "../image/bulkImg0.avif";
+import bulkImg from "../image/bulkImg.avif";
+import bulkImg2 from "../image/bulkImg2.avif";
+import bulkImg3 from "../image/bulkImg3.avif";
+import bulkImg4 from "../image/bulkImg4.avif";
+import bulkImg5 from "../image/bulkImg5.avif";
+import hand from "../image/hand.avif";
+import contact1 from "../image/contact1.png";
+import light from "../image/light.png";
+import meeting from "../image/meeting.avif";
+import global from "../image/global.png";
+import cross from "../image/cross.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaRegDotCircle } from "react-icons/fa";
@@ -591,8 +604,285 @@ const Home = () => {
 
       <div
         className="mt-5"
-        style={{ height: "500px", backgroundColor: "#242839" }}
-      ></div>
+        style={{
+          height: "1300px",
+          background: "rgb(72,75,75)",
+          background:
+            "linear-gradient(180deg, rgba(72,75,75,1) 35%, rgba(232, 240, 239, 0.8) 100%)",
+          fontFamily: "Arial",
+        }}
+      >
+        <div className="container  border-primary h-100">
+          <div
+            className=" d-flex flex-column justify-content-end"
+            style={{ height: "240px" }}
+          >
+            <h1
+              style={{
+                fontSize: "56px",
+                color: "#FFFFFF",
+                fontWeight: "600",
+                lineHeight: "67px",
+              }}
+            >
+              Uniting Communities Through
+            </h1>
+            <h1
+              style={{
+                fontSize: "56px",
+                fontWeight: "600",
+                lineHeight: "67px",
+              }}
+              className="gradientColor"
+            >
+              ✦ Inspiring Events
+            </h1>
+          </div>
+          <div className="row mb-5" style={{ height: "220px" }}>
+            <div className="col-7 text-white d-flex flex-column justify-content-center">
+              <h5
+                style={{
+                  fontSize: "1.34em",
+                  lineHeight: "33px",
+                  fontWeight: "400",
+                }}
+              >
+                At Communion, we're committed to organizing events that foster
+                connections, inspire personal and professional growth, and bring
+                people together to share meaningful experiences. From workshops
+                to conferences, every event is designed to leave a lasting
+                impact on our attendees.
+              </h5>
+            </div>
+            <div className="col-5">
+              <div className="h-75 d-flex justify-content-center text-white flex-wrap align-content-center">
+                <div className="w-50 me-2  d-flex justify-content-end flex-wrap align-content-center">
+                  <img src={worldPeople} className="w-75" />
+                </div>
+                <h4
+                  className="d-flex  justify-content-end flex-wrap align-content-center"
+                  style={{ width: "30%" }}
+                >
+                  Trusted by Over 15k+ Individuals Worldwide
+                </h4>
+              </div>
+              <div className="w-75 fs-5 text-center ms-4 mb-4">
+                <button className="px-4 py-2 rounded-3 ms-3">
+                  Explore Events <FaArrowRight />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mainDivHover  mt-4" style={{ height: "530px" }}>
+            <div className="col-3 h-100">
+              <img
+                src={bulkImg0}
+                className="h-100 w-100 rounded-3 object-fit-cover"
+              />
+            </div>
+
+            <div className="col-3 h-100 d-flex flex-column justify-content-between">
+              <div style={{ height: "49%" }}>
+                <img
+                  src={bulkImg}
+                  className="h-100 w-100 rounded-3 object-fit-cover"
+                />
+              </div>
+
+              <div style={{ height: "49%" }}>
+                <img
+                  src={bulkImg2}
+                  className="h-100 w-100 rounded-3 object-fit-cover"
+                />
+              </div>
+            </div>
+
+            <div className="col-3 h-100">
+              <img
+                src={bulkImg3}
+                className="h-100 w-100 rounded-3 object-fit-cover"
+              />
+            </div>
+
+            <div className="col-3 h-100 d-flex flex-column justify-content-between">
+              <div style={{ height: "49%" }}>
+                <img
+                  src={bulkImg4}
+                  className="h-100 w-100 rounded-3 object-fit-cover"
+                />
+              </div>
+
+              <div style={{ height: "49%" }}>
+                <img
+                  src={bulkImg5}
+                  className="h-100 w-100 rounded-3 object-fit-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="row mt-4 justify-content-between"
+            style={{ height: "230px" }}
+          >
+            <div className="col-4 h-100  d-flex flex-column justify-content-end">
+              <h3
+                style={{
+                  color: "#1E293B",
+                  fontSize: "32px",
+                  fontWeight: "600",
+                  lineHeight: "32px",
+                }}
+              >
+                Helping You Connect, <div className=" text-center">Learn,</div>
+              </h3>
+              <div className=" mt-4 w-75 text-center">
+                <h3
+                  style={{
+                    color: "#1E293B",
+                    fontSize: "32px",
+                    fontWeight: "600",
+                    lineHeight: "32px",
+                  }}
+                >
+                  and Thrive <span className="gradientText">✦ 2x</span>
+                </h3>
+                <h3
+                  style={{
+                    color: "#1E293B",
+                    fontSize: "32px",
+                    fontWeight: "600",
+                    lineHeight: "32px",
+                    textAlign: "center",
+                  }}
+                  className="gradientText"
+                >
+                  Impact
+                </h3>
+              </div>
+            </div>
+            <div className="col-7  h-100 d-flex justify-content-end">
+              <div className="w-75  h-100 text-center d-flex flex-column flex-wrap justify-content-center align-content-end">
+                <h2
+                  style={{
+                    fontSize: "55px",
+                    lineHeight: "63px",
+                    fontWeight: "600",
+                  }}
+                  className="w-50 mb-3"
+                >
+                  98%
+                </h2>
+                <p className="w-50" style={{ color: "#555555" }}>
+                  Opportunities Expanded
+                </p>
+              </div>
+              <div className="w-75  h-100 text-center d-flex flex-column flex-wrap justify-content-center align-content-end">
+                <h2
+                  style={{
+                    fontSize: "55px",
+                    lineHeight: "63px",
+                    fontWeight: "600",
+                  }}
+                  className=" w-50 mb-3"
+                >
+                  89%
+                </h2>
+                <p className=" w-50" style={{ color: "#555555" }}>
+                  Attendee Satisfaction
+                </p>
+              </div>
+              <div className="w-75 me-3  h-100 text-center d-flex flex-column flex-wrap justify-content-center align-content-end">
+                <h2
+                  style={{
+                    fontSize: "55px",
+                    lineHeight: "63px",
+                    fontWeight: "600",
+                  }}
+                  className="w-50 mb-3"
+                >
+                  15k+
+                </h2>
+                <p className="w-50" style={{ color: "#555555" }}>
+                  Engaged Participants
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5" style={{ height: "1000px" }}>
+        <div className="container">
+          <div
+            className="text-center mx-5 d-flex flex-column justify-content-end"
+            style={{
+              height: "150px",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "40px",
+                lineHeight: "48px",
+                fontWeight: "600",
+              }}
+            >
+              More Than <span style={{ color: "#0066FF" }}>10,000+ </span>
+              Engagements daily
+            </h2>
+            <h2
+              style={{
+                fontSize: "40px",
+                lineHeight: "48px",
+                fontWeight: "600",
+              }}
+            >
+              across the world
+            </h2>
+          </div>
+
+          <div
+            className="text-center d-flex flex-column justify-content-center"
+            style={{
+              height: "80px",
+              fontSize: "18px",
+              lineHeight: "29px",
+              fontWeight: "400",
+              margin: "0px 120px 0px 120px",
+              color: "#6D6D6D",
+            }}
+          >
+            Experience the power of connection with over 10,000 daily
+            interactions worldwide, uniting diverse communities through
+            innovation, collaboration, and shared spirituality.
+          </div>
+        </div>
+
+        <div className="border border-2 row mx-5" style={{ height: "720px" }}>
+          <div className="col-6 border d-flex justify-content-between">
+            <div
+              className="h-100 d-flex flex-column justify-content-center"
+              style={{ width: "48%" }}
+            >
+              <img
+                src={hand}
+                className="w-100 object-fit-cover h-75 rounded-pill "
+              />
+            </div>
+            <div
+              className="h-100 d-flex flex-column justify-content-start"
+              style={{ width: "48%" }}
+            >
+              <img
+                src={meeting}
+                className="w-100 object-fit-cover h-75 rounded-pill"
+              />
+            </div>
+          </div>
+          <div className="col-6"></div>
+        </div>
+      </div>
     </div>
   );
 };
