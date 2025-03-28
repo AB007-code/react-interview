@@ -135,3 +135,61 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.pStyle {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(102, 102, 102);
+  line-height: 24px;
+  width: 80%;
+  opacity: 0.8;
+}
+.h5Style {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 600;
+  width: 90%;
+}
+.iconmove {
+  transition: all 0.3s linear 0s;
+}
+.buttonHover {
+  background-color: #1e1e1e;
+}
+.buttonHover:hover {
+  background-color: #6d6c6c66;
+}
+.buttonHover:hover .iconmove {
+  transform: rotate(90deg);
+  transition: all 0.3s linear 0s;
+}
+.titleStyle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+  color: rgb(255, 255, 255);
+}
+.p1Style {
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  opacity: 0.9;
+}
+.div3Hover {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  width: 34%;
+  cursor: pointer;
+}
+.div3Hover:hover {
+  text-decoration: underline;
+}
+.momentHover {
+  transition: all 0.3s linear 0s;
+}
+.momentDivHover:hover .momentHover {
+  transform: rotate(2deg);
+  transition: all 0.3s linear 0s;
+}

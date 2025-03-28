@@ -15,6 +15,12 @@ import bulkImg2 from "../image/bulkImg2.avif";
 import bulkImg3 from "../image/bulkImg3.avif";
 import bulkImg4 from "../image/bulkImg4.avif";
 import bulkImg5 from "../image/bulkImg5.avif";
+import moment1 from "../image/moment1.jpg";
+import moment2 from "../image/moment2.avif";
+import moment3 from "../image/moment3.avif";
+import moment4 from "../image/moment4.avif";
+import moment5 from "../image/moment5.avif";
+import moment6 from "../image/moment6.avif";
 import hand from "../image/hand.avif";
 import contact1 from "../image/contact1.png";
 import light from "../image/light.png";
@@ -66,7 +72,7 @@ const Home = () => {
     modalDiv2.current.style.display = "block";
   };
   return (
-    <div>
+    <>
       <div className="text-center mt-3">
         <h1
           style={{
@@ -813,7 +819,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-5" style={{ height: "1000px" }}>
+      <div className="mt-5" style={{ height: "900px" }}>
         <div className="container">
           <div
             className="text-center mx-5 d-flex flex-column justify-content-end"
@@ -859,15 +865,16 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="border border-2 row mx-5" style={{ height: "720px" }}>
-          <div className="col-6 border d-flex justify-content-between">
+        <div className="row mt-5 mx-5" style={{ height: "650px" }}>
+          <div className="col-6 d-flex mb-3 justify-content-between">
             <div
-              className="h-100 d-flex flex-column justify-content-center"
+              className="h-100 d-flex  flex-column justify-content-end"
               style={{ width: "48%" }}
             >
               <img
                 src={hand}
-                className="w-100 object-fit-cover h-75 rounded-pill "
+                className="w-100 object-fit-cover  rounded-pill img"
+                style={{ height: "85%" }}
               />
             </div>
             <div
@@ -876,14 +883,260 @@ const Home = () => {
             >
               <img
                 src={meeting}
-                className="w-100 object-fit-cover h-75 rounded-pill"
+                className="w-100 object-fit-cover  rounded-pill img"
+                style={{ height: "85%" }}
               />
             </div>
           </div>
-          <div className="col-6"></div>
+          <div className="col-6 mb-3">
+            <div className="h-50 d-flex">
+              <div className="h-75 w-50 px-3 d-flex flex-column justify-content-between">
+                <div>
+                  <img src={global} />
+                </div>
+                <h5 className="h5Style">Global Connectivity</h5>
+                <p className="pStyle">
+                  Connecting people from diverse religious communities
+                  worldwide, fostering meaningful engagement.
+                </p>
+              </div>
+              <div
+                className="w-50 px-3 d-flex flex-column justify-content-between"
+                style={{ height: "95%" }}
+              >
+                <div>
+                  <img src={contact1} />
+                </div>
+                <h5 className="h5Style">
+                  Foster Inclusive Collaboration and Connect with People Around
+                  You
+                </h5>
+                <p className="pStyle" style={{ width: "90%" }}>
+                  Engage, collaborate, and connect with diverse people to build
+                  inclusive and meaningful relationships.
+                </p>
+              </div>
+            </div>
+            <div className="h-50 d-flex">
+              <div className="h-75 w-50 px-3 d-flex flex-column justify-content-between">
+                <div>
+                  <img src={cross} />
+                </div>
+                <h5 className="h5Style">Innovative Technology</h5>
+                <p className="pStyle mb-4" style={{ width: "90%" }}>
+                  Utilizing cutting-edge tools to enhance user experience and
+                  encourage active participation.
+                </p>
+              </div>
+              <div
+                className="w-50 px-3 d-flex flex-column justify-content-between"
+                style={{ height: "80%" }}
+              >
+                <div>
+                  <img src={light} />
+                </div>
+                <h5 className="h5Style">Daily Growth</h5>
+                <p className="pStyle mb-4" style={{ width: "90%" }}>
+                  Over 10,000+ daily engagements, creating a thriving community
+                  where spirituality and innovation meet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="mt-5"
+          style={{ height: "1500px", backgroundColor: "#1E1E1E" }}
+        >
+          <div
+            className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-end"
+            style={{ height: "220px" }}
+          >
+            <h1 className="w-50 fw-bold">
+              Moments of Connection We've Made So Far...
+            </h1>
+          </div>
+          <div
+            className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-center"
+            style={{ height: "100px" }}
+          >
+            <h5
+              className="w-50"
+              style={{
+                fontSize: "18px",
+                lineHeight: "29px",
+                fontWeight: "400",
+              }}
+            >
+              Explore the impactful connections we've fostered so far, bringing
+              together diverse communities through shared experiences,
+              collaboration, and innovation.
+            </h5>
+          </div>
+          <div className="text-center" style={{ height: "45px" }}>
+            <button className="px-4 h-100 rounded-pill border border-white text-white buttonHover">
+              View All Moments <FaArrowRight className="ms-2 iconmove" />
+            </button>
+          </div>
+
+          <div className="m-5 row" style={{ height: "1000px" }}>
+            <div className="col-4">
+              <div className="h-100 d-flex flex-column justify-content-between">
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "48%" }}
+                >
+                  <div style={{ height: "62%" }}>
+                    <img
+                      src={moment1}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Shared Service Projects</h4>
+                  <p className="p1Style me-4 ">
+                    Make a difference by joining hands to support impactful
+                    projects that uplift communities and bring positive change.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "48%" }}
+                >
+                  <div style={{ height: "62%" }}>
+                    <img
+                      src={moment2}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Cultural Exchanges</h4>
+                  <p className="p1Style me-4 ">
+                    Explore unique traditions, cuisines, and stories, building
+                    bridges across diverse cultures and backgrounds.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="h-100 d-flex flex-column justify-content-between">
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "58%" }}
+                >
+                  <div style={{ height: "70%" }}>
+                    <img
+                      src={moment3}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Community Celebrations</h4>
+                  <p className="p1Style me-4 ">
+                    Experience the joy of shared festivities as we honor
+                    traditions, embrace diversity, and strengthen communal
+                    bonds.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "40%" }}
+                >
+                  <div style={{ height: "55%" }}>
+                    <img
+                      src={moment4}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Volunteer Gatherings</h4>
+                  <p className="p1Style me-4 ">
+                    Join like-minded individuals in meaningful initiatives,
+                    giving back to communities and building lasting connections.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="h-100 d-flex flex-column justify-content-between">
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "48%" }}
+                >
+                  <div style={{ height: "62%" }}>
+                    <img
+                      src={moment5}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Volunteer Gatherings</h4>
+                  <p className="p1Style me-4 ">
+                    Join like-minded individuals in meaningful initiatives,
+                    giving back to communities and building lasting connections.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+                <div
+                  className="d-flex flex-column justify-content-between momentDivHover"
+                  style={{ height: "48%" }}
+                >
+                  <div style={{ height: "62%" }}>
+                    <img
+                      src={moment6}
+                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                    />
+                  </div>
+                  <h4 className="titleStyle ">Analytics and Reporting</h4>
+                  <p className="p1Style me-4 ">
+                    Our cutting-edge social media marketing tactics will help
+                    you maximize your brand's online visibility and expand your
+                    business exponentially.
+                  </p>
+                  <div className="div3Hover">View Cast Study {">"}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border" style={{ height: "1000px" }}>
+          <div
+            className="d-flex flex-wrap justify-content-center align-content-end"
+            style={{ height: "250px" }}
+          >
+            <h1
+              style={{
+                fontSize: "40px",
+                lineHeight: "46px",
+                fontWeight: "600",
+                width: "50%",
+                textAlign: "center",
+                wordSpacing: "5px",
+              }}
+            >
+              Trusted by Over 1500+ Active Global Users
+            </h1>
+          </div>
+          <div
+            className="d-flex justify-content-center flex-wrap align-content-end"
+            style={{
+              height: "80px",
+              fontSize: "19px",
+              lineHeight: "29px",
+              fontWeight: "400",
+              textAlign: "center",
+              opacity: "0.8",
+            }}
+          >
+            <p style={{ width: "48%" }}>
+              Join a growing community of over 1500 users worldwide who trust us
+              to connect, engage, and thrive together.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
