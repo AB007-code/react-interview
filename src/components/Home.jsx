@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import smile from "../image/smile.png";
 import person from "../image/person.png";
@@ -27,9 +27,24 @@ import light from "../image/light.png";
 import meeting from "../image/meeting.avif";
 import global from "../image/global.png";
 import cross from "../image/cross.png";
+import person1 from "../image/person-1.avif";
+import person2 from "../image/person-2.avif";
+import person3 from "../image/person-3.avif";
+import person4 from "../image/person-4.avif";
+import person5 from "../image/person-5.avif";
+import hindu from "../image/hindu.png";
+import muslim from "../image/muslim.png";
+import sardar from "../image/sardar.png";
+import container1 from "../image/Container1.png";
+import container2 from "../image/Container2.png";
+import container3 from "../image/Container3.png";
+import container4 from "../image/Container4.png";
+import container5 from "../image/Container5.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaRegDotCircle } from "react-icons/fa";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
 import contact from "../image/contact.png";
 import fan from "../image/fan.png";
 import stati from "../image/static.png";
@@ -40,6 +55,7 @@ const Home = () => {
   const modal2 = useRef();
   const modalDiv2 = useRef();
   const modal3 = useRef();
+  const parentDiv = useRef();
   const popupHandel = () => {
     modal.current.style.backdropFilter = "blur(5px)";
     modal1.current.opacity = "1";
@@ -70,6 +86,50 @@ const Home = () => {
     modalDiv2.current.style.backdropFilter = "blur(5px)";
     modal3.current.opacity = "1";
     modalDiv2.current.style.display = "block";
+  };
+  let i = 0;
+  const leftHandeler = () => {
+    if (i == 0) {
+      i = -60;
+    } else {
+      i = i + 20;
+    }
+    parentDiv.current.style.transform = `translate(${i}%,0px)`;
+    parentDiv.current.style.transition = "all 0.1s linear 0s";
+  };
+  const rightHandeler = () => {
+    if (i == "-60") {
+      i = 0;
+    } else {
+      i = i - 20;
+    }
+    parentDiv.current.style.transform = `translate(${i}%,0px)`;
+    parentDiv.current.style.transition = "all 0.1s linear 0s";
+  };
+  let arrowIcon = useRef();
+  let rowWidth = useRef();
+  let hideDiv = useRef();
+  let mainDiv = useRef();
+  const [text, setText] = useState("View All");
+  //   const [iconHover1, setIconHover1] = useState("");
+  const textChangeClick = () => {
+    switch (text) {
+      case "View All":
+        setText("Show Less");
+        rowWidth.current.style.height = "50%";
+        hideDiv.current.style.display = "block";
+        mainDiv.current.style.height = "1400px";
+        arrowIcon.current.style.transform = "rotate(180deg)";
+        break;
+      case "Show Less":
+        setText("View All");
+        rowWidth.current.style.height = "650px";
+        rowWidth.current.style.marginTop = "-30px";
+        mainDiv.current.style.height = "750px";
+        hideDiv.current.style.display = "none";
+        arrowIcon.current.style.transform = "rotate(90deg)";
+        break;
+    }
   };
   return (
     <>
@@ -944,198 +1004,901 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+      </div>
+      <div
+        className="mt-5"
+        style={{ height: "1500px", backgroundColor: "#1E1E1E" }}
+      >
         <div
-          className="mt-5"
-          style={{ height: "1500px", backgroundColor: "#1E1E1E" }}
+          className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-end"
+          style={{ height: "220px" }}
         >
-          <div
-            className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-end"
-            style={{ height: "220px" }}
-          >
-            <h1 className="w-50 fw-bold">
-              Moments of Connection We've Made So Far...
-            </h1>
-          </div>
-          <div
-            className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-center"
-            style={{ height: "100px" }}
-          >
-            <h5
-              className="w-50"
-              style={{
-                fontSize: "18px",
-                lineHeight: "29px",
-                fontWeight: "400",
-              }}
-            >
-              Explore the impactful connections we've fostered so far, bringing
-              together diverse communities through shared experiences,
-              collaboration, and innovation.
-            </h5>
-          </div>
-          <div className="text-center" style={{ height: "45px" }}>
-            <button className="px-4 h-100 rounded-pill border border-white text-white buttonHover">
-              View All Moments <FaArrowRight className="ms-2 iconmove" />
-            </button>
-          </div>
-
-          <div className="m-5 row" style={{ height: "1000px" }}>
-            <div className="col-4">
-              <div className="h-100 d-flex flex-column justify-content-between">
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "48%" }}
-                >
-                  <div style={{ height: "62%" }}>
-                    <img
-                      src={moment1}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Shared Service Projects</h4>
-                  <p className="p1Style me-4 ">
-                    Make a difference by joining hands to support impactful
-                    projects that uplift communities and bring positive change.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "48%" }}
-                >
-                  <div style={{ height: "62%" }}>
-                    <img
-                      src={moment2}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Cultural Exchanges</h4>
-                  <p className="p1Style me-4 ">
-                    Explore unique traditions, cuisines, and stories, building
-                    bridges across diverse cultures and backgrounds.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="h-100 d-flex flex-column justify-content-between">
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "58%" }}
-                >
-                  <div style={{ height: "70%" }}>
-                    <img
-                      src={moment3}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Community Celebrations</h4>
-                  <p className="p1Style me-4 ">
-                    Experience the joy of shared festivities as we honor
-                    traditions, embrace diversity, and strengthen communal
-                    bonds.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "40%" }}
-                >
-                  <div style={{ height: "55%" }}>
-                    <img
-                      src={moment4}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Volunteer Gatherings</h4>
-                  <p className="p1Style me-4 ">
-                    Join like-minded individuals in meaningful initiatives,
-                    giving back to communities and building lasting connections.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="h-100 d-flex flex-column justify-content-between">
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "48%" }}
-                >
-                  <div style={{ height: "62%" }}>
-                    <img
-                      src={moment5}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Volunteer Gatherings</h4>
-                  <p className="p1Style me-4 ">
-                    Join like-minded individuals in meaningful initiatives,
-                    giving back to communities and building lasting connections.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-                <div
-                  className="d-flex flex-column justify-content-between momentDivHover"
-                  style={{ height: "48%" }}
-                >
-                  <div style={{ height: "62%" }}>
-                    <img
-                      src={moment6}
-                      className="w-100 h-100 object-fit-cover rounded-4 momentHover"
-                    />
-                  </div>
-                  <h4 className="titleStyle ">Analytics and Reporting</h4>
-                  <p className="p1Style me-4 ">
-                    Our cutting-edge social media marketing tactics will help
-                    you maximize your brand's online visibility and expand your
-                    business exponentially.
-                  </p>
-                  <div className="div3Hover">View Cast Study {">"}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h1 className="w-50 fw-bold">
+            Moments of Connection We've Made So Far...
+          </h1>
         </div>
-
-        <div className="border" style={{ height: "1000px" }}>
-          <div
-            className="d-flex flex-wrap justify-content-center align-content-end"
-            style={{ height: "250px" }}
-          >
-            <h1
-              style={{
-                fontSize: "40px",
-                lineHeight: "46px",
-                fontWeight: "600",
-                width: "50%",
-                textAlign: "center",
-                wordSpacing: "5px",
-              }}
-            >
-              Trusted by Over 1500+ Active Global Users
-            </h1>
-          </div>
-          <div
-            className="d-flex justify-content-center flex-wrap align-content-end"
+        <div
+          className="text-center text-white mx-4 d-flex flex-wrap justify-content-center align-content-center"
+          style={{ height: "100px" }}
+        >
+          <h5
+            className="w-50"
             style={{
-              height: "80px",
-              fontSize: "19px",
+              fontSize: "18px",
               lineHeight: "29px",
               fontWeight: "400",
-              textAlign: "center",
-              opacity: "0.8",
             }}
           >
-            <p style={{ width: "48%" }}>
-              Join a growing community of over 1500 users worldwide who trust us
-              to connect, engage, and thrive together.
-            </p>
+            Explore the impactful connections we've fostered so far, bringing
+            together diverse communities through shared experiences,
+            collaboration, and innovation.
+          </h5>
+        </div>
+        <div className="text-center" style={{ height: "45px" }}>
+          <button className="px-4 h-100 rounded-pill border border-white text-white buttonHover">
+            View All Moments <FaArrowRight className="ms-2 iconmove" />
+          </button>
+        </div>
+
+        <div className="m-5 row" style={{ height: "1000px" }}>
+          <div className="col-4">
+            <div className="h-100 d-flex flex-column justify-content-between">
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "48%" }}
+              >
+                <div style={{ height: "62%" }}>
+                  <img
+                    src={moment1}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Shared Service Projects</h4>
+                <p className="p1Style me-4 ">
+                  Make a difference by joining hands to support impactful
+                  projects that uplift communities and bring positive change.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "48%" }}
+              >
+                <div style={{ height: "62%" }}>
+                  <img
+                    src={moment2}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Cultural Exchanges</h4>
+                <p className="p1Style me-4 ">
+                  Explore unique traditions, cuisines, and stories, building
+                  bridges across diverse cultures and backgrounds.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4">
+            <div className="h-100 d-flex flex-column justify-content-between">
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "58%" }}
+              >
+                <div style={{ height: "70%" }}>
+                  <img
+                    src={moment3}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Community Celebrations</h4>
+                <p className="p1Style me-4 ">
+                  Experience the joy of shared festivities as we honor
+                  traditions, embrace diversity, and strengthen communal bonds.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "40%" }}
+              >
+                <div style={{ height: "55%" }}>
+                  <img
+                    src={moment4}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Volunteer Gatherings</h4>
+                <p className="p1Style me-4 ">
+                  Join like-minded individuals in meaningful initiatives, giving
+                  back to communities and building lasting connections.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4">
+            <div className="h-100 d-flex flex-column justify-content-between">
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "48%" }}
+              >
+                <div style={{ height: "62%" }}>
+                  <img
+                    src={moment5}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Volunteer Gatherings</h4>
+                <p className="p1Style me-4 ">
+                  Join like-minded individuals in meaningful initiatives, giving
+                  back to communities and building lasting connections.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+              <div
+                className="d-flex flex-column justify-content-between momentDivHover"
+                style={{ height: "48%" }}
+              >
+                <div style={{ height: "62%" }}>
+                  <img
+                    src={moment6}
+                    className="w-100 h-100 object-fit-cover rounded-4 momentHover"
+                  />
+                </div>
+                <h4 className="titleStyle ">Analytics and Reporting</h4>
+                <p className="p1Style me-4 ">
+                  Our cutting-edge social media marketing tactics will help you
+                  maximize your brand's online visibility and expand your
+                  business exponentially.
+                </p>
+                <div className="div3Hover">View Cast Study {">"}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className="border" style={{ height: "870px" }}>
+        <div
+          className="d-flex flex-wrap justify-content-center align-content-end"
+          style={{ height: "250px" }}
+        >
+          <h1
+            style={{
+              fontSize: "40px",
+              lineHeight: "46px",
+              fontWeight: "600",
+              width: "50%",
+              textAlign: "center",
+              wordSpacing: "5px",
+            }}
+          >
+            Trusted by Over 1500+ Active Global Users
+          </h1>
+        </div>
+        <div
+          className="d-flex justify-content-center flex-wrap align-content-end mb-5"
+          style={{
+            height: "80px",
+            fontSize: "19px",
+            lineHeight: "29px",
+            fontWeight: "400",
+            textAlign: "center",
+            opacity: "0.8",
+          }}
+        >
+          <p style={{ width: "48%" }}>
+            Join a growing community of over 1500 users worldwide who trust us
+            to connect, engage, and thrive together.
+          </p>
+        </div>
+
+        <div
+          className="container"
+          style={{ height: "330px", overflow: "hidden" }}
+        >
+          <div
+            style={{ width: "168%" }}
+            className="d-flex h-100"
+            ref={parentDiv}
+          >
+            <div style={{ width: "33%" }}>
+              <div
+                className="h-100 border rounded-4  p-5 blockHover"
+                style={{ backgroundColor: "rgb(222, 226, 255)" }}
+              >
+                <div className="h-75">
+                  <h5>
+                    Communion has transformed how I connect with my community,
+                    fostering unity and understanding among diverse faiths. The
+                  </h5>
+                </div>
+
+                <div
+                  style={{ height: "70px" }}
+                  className="d-flex flex-wrap align-content-center"
+                >
+                  <div className="d-flex flex-wrap align-content-center">
+                    <div
+                      style={{ height: "60px", width: "60px" }}
+                      className="me-4"
+                    >
+                      <img
+                        src={person1}
+                        className="h-100 w-100 object-fit-cover rounded-circle"
+                      />
+                    </div>
+                  </div>
+                  <div className="d-flex h-100 flex-column justify-content-around">
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      John M.,
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "16px",
+                        color: "rgb(102, 102, 102)",
+
+                        margin: "0px",
+                      }}
+                    >
+                      USA
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ width: "33%" }} className="mx-2">
+              <div
+                className="h-100 border rounded-4 p-5 text-white blockHover"
+                style={{ backgroundColor: "#111928" }}
+              >
+                <div className="h-75">
+                  <h5>
+                    Being part of Communion is life-changing, blending
+                    innovation with spirituality to create a truly inclusive
+                    space. The events and...
+                  </h5>
+                </div>
+
+                <div
+                  style={{ height: "70px" }}
+                  className="d-flex flex-wrap align-content-center"
+                >
+                  <div className="d-flex flex-wrap align-content-center">
+                    <div
+                      style={{ height: "60px", width: "60px" }}
+                      className="me-4"
+                    >
+                      <img
+                        src={person2}
+                        className="h-100 w-100 object-fit-cover rounded-circle"
+                      />
+                    </div>
+                  </div>
+                  <div className="d-flex h-100 flex-column justify-content-around">
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      Rohan K.,
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "16px",
+                        color: "rgb(102, 102, 102)",
+                        margin: "0px",
+                      }}
+                    >
+                      India
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ width: "33%" }}>
+              <div
+                className="h-100 border rounded-4  p-5 blockHover"
+                style={{ backgroundColor: "rgb(222, 226, 255)" }}
+              >
+                <div className="h-75">
+                  <h5>
+                    Through Communion, I've joined events and discussions that
+                    broadened my perspective and connected me globally. The...
+                  </h5>
+                </div>
+
+                <div
+                  style={{ height: "70px" }}
+                  className="d-flex flex-wrap align-content-center"
+                >
+                  <div className="d-flex flex-wrap align-content-center">
+                    <div
+                      style={{ height: "60px", width: "60px" }}
+                      className="me-4"
+                    >
+                      <img
+                        src={person3}
+                        className="h-100 w-100 object-fit-cover rounded-circle"
+                      />
+                    </div>
+                  </div>
+                  <div className="d-flex h-100 flex-column justify-content-around">
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      Amira L.,
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "16px",
+                        color: "rgb(102, 102, 102)",
+
+                        margin: "0px",
+                      }}
+                    >
+                      UAE
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ width: "33%" }} className="mx-2">
+              <div
+                className="h-100 border rounded-4 p-5 text-white blockHover"
+                style={{ backgroundColor: "#111928" }}
+              >
+                <div className="h-75">
+                  <h5>
+                    The platform's interfaith dialogue features have helped me
+                    understand different perspectives and grow spiritually.
+                    Communion...
+                  </h5>
+                </div>
+
+                <div
+                  style={{ height: "70px" }}
+                  className="d-flex flex-wrap align-content-center"
+                >
+                  <div className="d-flex flex-wrap align-content-center">
+                    <div
+                      style={{ height: "60px", width: "60px" }}
+                      className="me-4"
+                    >
+                      <img
+                        src={person4}
+                        className="h-100 w-100 object-fit-cover rounded-circle"
+                      />
+                    </div>
+                  </div>
+                  <div className="d-flex h-100 flex-column justify-content-around">
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      Sarah P.,
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "16px",
+                        color: "rgb(102, 102, 102)",
+                        margin: "0px",
+                      }}
+                    >
+                      UK
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ width: "33%" }}>
+              <div
+                className="h-100 border rounded-4 p-5 blockHover"
+                style={{ backgroundColor: "rgb(222, 226, 255)" }}
+              >
+                <div className="h-75">
+                  <h5>
+                    Communion's events feature has made it easy to organize and
+                    participate in meaningful spiritual gatherings. The
+                    community's...
+                  </h5>
+                </div>
+
+                <div
+                  style={{ height: "70px" }}
+                  className="d-flex flex-wrap align-content-center"
+                >
+                  <div className="d-flex flex-wrap align-content-center">
+                    <div
+                      style={{ height: "60px", width: "60px" }}
+                      className="me-4"
+                    >
+                      <img
+                        src={person5}
+                        className="h-100 w-100 object-fit-cover rounded-circle"
+                      />
+                    </div>
+                  </div>
+                  <div className="d-flex h-100 flex-column justify-content-around">
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        lineHeight: "18px",
+                      }}
+                    >
+                      David C.,
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        lineHeight: "16px",
+                        color: "rgb(102, 102, 102)",
+
+                        margin: "0px",
+                      }}
+                    >
+                      Canada
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="d-flex justify-content-center mt-4"
+          style={{ height: "60px" }}
+        >
+          <div
+            style={{ width: "15%" }}
+            className="h-100 d-flex justify-content-center"
+          >
+            <div className="icon2 rounded-circle me-2">
+              <IoIosArrowDropleftCircle
+                className="h-100 w-100 rounded-circle"
+                onClick={leftHandeler}
+              />
+            </div>
+            <div className="icon2 rounded-circle">
+              <IoIosArrowDroprightCircle
+                className="h-100 w-100 rounded-circle"
+                onClick={rightHandeler}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ height: "1120px", backgroundColor: "#14161F" }}>
+        <div className="d-flex mx-5" style={{ height: "550px" }}>
+          <div
+            className=" d-flex flex-wrap align-content-center"
+            style={{ height: "90%", width: "70%" }}
+          >
+            <div className="d-flex justify-content-around text-white">
+              <div
+                style={{ width: "50%" }}
+                className=" mt-5 d-flex flex-column justify-content-between"
+              >
+                <h1
+                  style={{
+                    fontSize: "45px",
+                    fontWeight: "600",
+                    lineHeight: "54px",
+                  }}
+                >
+                  Meet Our Social Expert Team
+                </h1>
+                <p
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    fontWeight: "400",
+                    opacity: "0.9",
+                  }}
+                >
+                  Our expert team blends technology, spirituality, and community
+                  engagement to create an inclusive platform where everyone can
+                  connect, share, and grow. Meet the passionate people behind
+                  Communion's vision!
+                </p>
+                <div
+                  style={{
+                    width: "60%",
+                    height: "50px",
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="h-100 w-100 border-white border text-white rounded-5 d-flex flex-wrap align-content-center justify-content-center"
+                    style={{ backgroundColor: "#14161F" }}
+                  >
+                    Connect With Us
+                    <span>
+                      <FaArrowRight className="ms-3 mb-1" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div className="h-100" style={{ width: "230px" }}>
+                <img
+                  src={hindu}
+                  className="w-100 rounded-pill object-fit-cover contanerImg"
+                  style={{ height: "400px" }}
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="d-flex justify-content-around mt-3"
+            style={{ width: "50%", marginTop: "4%" }}
+          >
+            <div className="h-100 d-flex flex-column justify-content-center">
+              <div style={{ width: "230px", height: "75%" }}>
+                <img
+                  src={sardar}
+                  className="w-100 object-fit-cover rounded-pill contanerImg"
+                  style={{ height: "400px" }}
+                />
+              </div>
+            </div>
+            <div className="h-100 d-flex flex-column justify-content-end ms-4">
+              <div style={{ width: "230px", height: "75%" }}>
+                <img
+                  src={muslim}
+                  className=" w-100 object-fit-cover rounded-pill contanerImg"
+                  style={{ height: "400px" }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="d-flex  justify-content-between mx-5"
+          style={{ height: "520px" }}
+        >
+          <div className="h-75" style={{ width: "220px" }}>
+            <img
+              src={container1}
+              className="w-100 object-fit-cover rounded-pill contanerImg"
+              style={{
+                height: "400px",
+                marginBottom: "100px",
+                position: "relative",
+                top: "-70px",
+              }}
+            />
+          </div>
+
+          <div className=" h-75" style={{ width: "220px" }}>
+            <img
+              src={container2}
+              className="w-100 object-fit-cover rounded-pill contanerImg"
+              style={{
+                height: "400px",
+                marginBottom: "100px",
+                position: "relative",
+                top: "-10px",
+              }}
+            />
+          </div>
+
+          <div className="h-75" style={{ width: "220px" }}>
+            <img
+              src={container3}
+              className="w-100 object-fit-cover rounded-pill contanerImg"
+              style={{
+                height: "400px",
+                marginBottom: "100px",
+                position: "relative",
+                top: "20px",
+              }}
+            />
+          </div>
+
+          <div className="h-75" style={{ width: "220px" }}>
+            <img
+              src={container4}
+              className="w-100 object-fit-cover rounded-pill contanerImg"
+              style={{
+                height: "400px",
+                marginBottom: "100px",
+                position: "relative",
+                top: "50px",
+              }}
+            />
+          </div>
+
+          <div className="h-75" style={{ width: "220px" }}>
+            <img
+              src={container5}
+              className="w-100 object-fit-cover rounded-pill contanerImg"
+              style={{
+                height: "400px",
+                marginBottom: "100px",
+                position: "relative",
+                top: "90px",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-5 d-flex mainDiv2" ref={mainDiv}>
+        <div
+          className="d-flex flex-column justify-content-around px-5"
+          style={{ height: "300px", width: "40%", marginTop: "100px" }}
+        >
+          <h1
+            style={{ fontSize: "56px", fontWeight: "600", lineHeight: "67px" }}
+          >
+            Frequently Asked Questions
+          </h1>
+          <button
+            type="button"
+            className="button2Hover"
+            onClick={textChangeClick}
+          >
+            <span>{text}</span>{" "}
+            <span className="d-flex flex-column justify-content-center">
+              <FaArrowRight className="iconmove ms-3 fs-5" ref={arrowIcon} />
+            </span>
+          </button>
+        </div>
+
+        <div className="container h-100" style={{ width: "60%" }}>
+          <div style={{ height: "94%" }}>
+            <div
+              className="row row-cols-1 mt-5 gy-1 d-flex flex-column justify-content-around rowHeight"
+              ref={rowWidth}
+            >
+              <div className="col">
+                <div className="toggleDiv">
+                  <div className="child1Div px-3 ">
+                    <div className="queDiv  d-flex flex-column justify-content-center">
+                      What is the Communion App?
+                    </div>
+                    <div className="plusDiv d-flex flex-column justify-content-center">
+                      +
+                    </div>
+                  </div>
+                  <div>
+                    <div className="border border-black w-100"></div>
+                    <p className="ptagDiv px-3">
+                      A vibrant platform for connecting diverse faiths and
+                      communities!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="toggleDiv">
+                  <div className=" child1Div px-3 ">
+                    <div className="queDiv  d-flex flex-column justify-content-center">
+                      How does it promote social cohesion
+                    </div>
+                    <div className="plusDiv d-flex flex-column justify-content-center">
+                      +
+                    </div>
+                  </div>
+                  <div>
+                    <div className="border border-black w-100"></div>
+                    <p className="ptagDiv px-3">
+                      By fostering collaboration and understanding through
+                      engaging activities!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="toggleDiv">
+                  <div className="child1Div px-3 ">
+                    <div className="queDiv  d-flex flex-column justify-content-center">
+                      Is it free to use?
+                    </div>
+                    <div className="plusDiv d-flex flex-column justify-content-center">
+                      +
+                    </div>
+                  </div>
+                  <div>
+                    <div className="border border-black w-100"></div>
+                    <p className="ptagDiv px-3">
+                      Absolutely! Join the fun without spending a dime!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="toggleDiv">
+                  <div className="child1Div px-3 ">
+                    <div className="queDiv  d-flex flex-column justify-content-center">
+                      Can I meet new People
+                    </div>
+                    <div className="plusDiv  d-flex flex-column justify-content-center">
+                      +
+                    </div>
+                  </div>
+                  <div>
+                    <div className="border border-black w-100"></div>
+                    <p className="ptagDiv px-3">
+                      Yes! Connect with like-minded individuals and expand your
+                      circle!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="toggleDiv">
+                  <div className="child1Div px-3 ">
+                    <div className="queDiv  d-flex flex-column justify-content-center">
+                      What if I have more questions?
+                    </div>
+                    <div className="plusDiv  d-flex flex-column justify-content-center">
+                      +
+                    </div>
+                  </div>
+                  <div>
+                    <div className="border border-black w-100"></div>
+                    <p className="ptagDiv px-3">
+                      Reach out to our support team anytime!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="hiddenDiv"
+              ref={hideDiv}
+              style={{ marginTop: "1px" }}
+            >
+              <div
+                className="row row-cols-1 mb-5 gy-1 d-flex flex-column justify-content-around rowHeight"
+                style={{ marginTop: "1px" }}
+              >
+                <div className="col">
+                  <div className="toggleDiv">
+                    <div className="child1Div px-3 ">
+                      <div className="queDiv  d-flex flex-column justify-content-center">
+                        How secure is my data?
+                      </div>
+                      <div className="plusDiv  d-flex flex-column justify-content-center">
+                        +
+                      </div>
+                    </div>
+                    <div>
+                      <div className="border border-black w-100"></div>
+                      <p className="ptagDiv px-3">
+                        We use state-of-the-art encryption to protect your
+                        personal information!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col">
+                  <div className="toggleDiv my-1">
+                    <div className="child1Div px-3 ">
+                      <div className="queDiv  d-flex flex-column justify-content-center">
+                        Can I create my own community?
+                      </div>
+                      <div className="plusDiv  d-flex flex-column justify-content-center">
+                        +
+                      </div>
+                    </div>
+                    <div>
+                      <div className="border border-black w-100"></div>
+                      <p className="ptagDiv px-3">
+                        Yes! Start your own community and invite others to join!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col">
+                  <div className="toggleDiv">
+                    <div className="child1Div px-3 ">
+                      <div className="queDiv  d-flex flex-column justify-content-center">
+                        Are there mobile apps available?
+                      </div>
+                      <div className="plusDiv  d-flex flex-column justify-content-center">
+                        +
+                      </div>
+                    </div>
+                    <div>
+                      <div className="border border-black w-100"></div>
+                      <p className="ptagDiv px-3">
+                        We have apps for both iOS and Android platforms!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col">
+                  <div className="toggleDiv my-1">
+                    <div className="child1Div px-3 ">
+                      <div className="queDiv  d-flex flex-column justify-content-center">
+                        How can I report inappropriate content?
+                      </div>
+                      <div className="plusDiv  d-flex flex-column justify-content-center">
+                        +
+                      </div>
+                    </div>
+                    <div>
+                      <div className="border border-black w-100"></div>
+                      <p className="ptagDiv px-3">
+                        Use the report button or contact our moderation team
+                        directly!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col">
+                  <div className="toggleDiv">
+                    <div className="child1Div px-3 ">
+                      <div className="queDiv  d-flex flex-column justify-content-center">
+                        Can i delete my account?
+                      </div>
+                      <div className="plusDiv  d-flex flex-column justify-content-center">
+                        +
+                      </div>
+                    </div>
+                    <div>
+                      <div className="border border-black w-100"></div>
+                      <p className="ptagDiv px-3">
+                        Yes, you can delete your account and all associated data
+                        at any time!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style={{ height: "600px", backgroundColor: "#14161F" }}
+        className="border"
+      ></div>
     </>
   );
 };

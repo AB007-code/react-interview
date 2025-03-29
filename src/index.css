@@ -150,6 +150,7 @@
   width: 90%;
 }
 .iconmove {
+  transform: rotate(0deg);
   transition: all 0.3s linear 0s;
 }
 .buttonHover {
@@ -192,4 +193,79 @@
 .momentDivHover:hover .momentHover {
   transform: rotate(2deg);
   transition: all 0.3s linear 0s;
+}
+.icon2 {
+  color: #0000ff;
+}
+.blockHover {
+  width: 95%;
+  transition: all 0.2s linear 0s;
+}
+.blockHover:hover {
+  width: 100%;
+  transition: all 0.2s linear 0s;
+  box-shadow: 10px 10px 10px rgba(221, 218, 218, 0.93),
+    -10px -10px 10px rgba(221, 218, 218, 0.93);
+}
+.contanerImg {
+  transition: all 0.3s linear 0s;
+}
+.contanerImg:hover {
+  transform: scale(1.05);
+  transition: all 0.3s linear 0s;
+}
+.button2Hover {
+  background-color: rgb(31, 42, 55);
+  height: 50px;
+  width: 140px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  border: 0px;
+  transition: all 1s ease-out 0s;
+}
+.button2Hover:hover {
+  background-color: #4c555f;
+  transition: all 1s ease-in 0.3s;
+}
+.button2Hover:hover .iconmove {
+  transform: rotate(90deg);
+}
+
+.toggleDiv {
+  border: 1px solid;
+  height: 120px;
+  border-radius: 12px;
+}
+.child1Div {
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.queDiv {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 21px;
+  color: rgb(31, 42, 55);
+}
+.plusDiv {
+  font-size: 2em;
+  line-height: 28px;
+  color: rgb(31, 42, 55);
+}
+.ptagDiv {
+  font-size: 1.08em;
+  opacity: 0.8;
+}
+.hiddenDiv {
+  display: none;
+}
+.mainDiv2 {
+  height: 740px;
+}
+.rowHeight {
+  height: 650px;
 }
