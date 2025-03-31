@@ -110,8 +110,9 @@ const Home = () => {
   let rowWidth = useRef();
   let hideDiv = useRef();
   let mainDiv = useRef();
+  let btn2 = useRef();
   const [text, setText] = useState("View All");
-  //   const [iconHover1, setIconHover1] = useState("");
+
   const textChangeClick = () => {
     switch (text) {
       case "View All":
@@ -119,7 +120,7 @@ const Home = () => {
         rowWidth.current.style.height = "50%";
         hideDiv.current.style.display = "block";
         mainDiv.current.style.height = "1400px";
-        arrowIcon.current.style.transform = "rotate(180deg)";
+        arrowIcon.current.setAttribute("class", "arrowIcon");
         break;
       case "Show Less":
         setText("View All");
@@ -127,10 +128,39 @@ const Home = () => {
         rowWidth.current.style.marginTop = "-30px";
         mainDiv.current.style.height = "750px";
         hideDiv.current.style.display = "none";
-        arrowIcon.current.style.transform = "rotate(90deg)";
+        // arrowIcon.current.style.transform = "rotate(90deg)";
+        arrowIcon.current.setAttribute("class", "iconmove1");
         break;
     }
   };
+
+  //toggle Handeler
+  const toggleHandeler = (e) => {
+    let childDiv = e.target.closest(".child1Div");
+    let doc = document.querySelectorAll(".child1Div");
+    doc.forEach((ele) => {
+      if (ele != childDiv) {
+        ele.closest(".toggleDiv").children[1].style.display = "none";
+        ele.closest(".toggleDiv").style.height = "100px";
+      }
+    });
+    let divNone = e.target.closest(".toggleDiv").children[1];
+    let toggleDiv = e.target.closest(".toggleDiv");
+    // console.log(toggleDiv.children[0].children[1]);
+    let plusDiv = toggleDiv.children[0].children[1];
+    if (divNone.style.display == "none") {
+      divNone.style.display = "block";
+      toggleDiv.style.height = "110px";
+      plusDiv.textContent = "-";
+      plusDiv.style.fontSize = "3em";
+    } else {
+      divNone.style.display = "none";
+      toggleDiv.style.height = "100px";
+      plusDiv.textContent = "+";
+      plusDiv.style.fontSize = "2em";
+    }
+  };
+
   return (
     <>
       <div className="text-center mt-3">
@@ -1670,10 +1700,11 @@ const Home = () => {
             type="button"
             className="button2Hover"
             onClick={textChangeClick}
+            ref={btn2}
           >
             <span>{text}</span>{" "}
             <span className="d-flex flex-column justify-content-center">
-              <FaArrowRight className="iconmove ms-3 fs-5" ref={arrowIcon} />
+              <FaArrowRight className="iconmove1" ref={arrowIcon} />
             </span>
           </button>
         </div>
@@ -1686,7 +1717,7 @@ const Home = () => {
             >
               <div className="col">
                 <div className="toggleDiv">
-                  <div className="child1Div px-3 ">
+                  <div className="child1Div px-3" onClick={toggleHandeler}>
                     <div className="queDiv  d-flex flex-column justify-content-center">
                       What is the Communion App?
                     </div>
@@ -1694,7 +1725,7 @@ const Home = () => {
                       +
                     </div>
                   </div>
-                  <div>
+                  <div className="divNone">
                     <div className="border border-black w-100"></div>
                     <p className="ptagDiv px-3">
                       A vibrant platform for connecting diverse faiths and
@@ -1706,7 +1737,11 @@ const Home = () => {
 
               <div className="col">
                 <div className="toggleDiv">
-                  <div className=" child1Div px-3 ">
+                  <div
+                    className=" child1Div px-3 "
+                    onClick={toggleHandeler}
+                    key={2}
+                  >
                     <div className="queDiv  d-flex flex-column justify-content-center">
                       How does it promote social cohesion
                     </div>
@@ -1714,7 +1749,7 @@ const Home = () => {
                       +
                     </div>
                   </div>
-                  <div>
+                  <div className="divNone">
                     <div className="border border-black w-100"></div>
                     <p className="ptagDiv px-3">
                       By fostering collaboration and understanding through
@@ -1726,7 +1761,11 @@ const Home = () => {
 
               <div className="col">
                 <div className="toggleDiv">
-                  <div className="child1Div px-3 ">
+                  <div
+                    className="child1Div px-3 "
+                    onClick={toggleHandeler}
+                    key={3}
+                  >
                     <div className="queDiv  d-flex flex-column justify-content-center">
                       Is it free to use?
                     </div>
@@ -1734,7 +1773,7 @@ const Home = () => {
                       +
                     </div>
                   </div>
-                  <div>
+                  <div className="divNone">
                     <div className="border border-black w-100"></div>
                     <p className="ptagDiv px-3">
                       Absolutely! Join the fun without spending a dime!
@@ -1745,7 +1784,11 @@ const Home = () => {
 
               <div className="col">
                 <div className="toggleDiv">
-                  <div className="child1Div px-3 ">
+                  <div
+                    className="child1Div px-3 "
+                    onClick={toggleHandeler}
+                    key={4}
+                  >
                     <div className="queDiv  d-flex flex-column justify-content-center">
                       Can I meet new People
                     </div>
@@ -1753,7 +1796,7 @@ const Home = () => {
                       +
                     </div>
                   </div>
-                  <div>
+                  <div className="divNone">
                     <div className="border border-black w-100"></div>
                     <p className="ptagDiv px-3">
                       Yes! Connect with like-minded individuals and expand your
@@ -1765,7 +1808,11 @@ const Home = () => {
 
               <div className="col">
                 <div className="toggleDiv">
-                  <div className="child1Div px-3 ">
+                  <div
+                    className="child1Div px-3 "
+                    onClick={toggleHandeler}
+                    key={5}
+                  >
                     <div className="queDiv  d-flex flex-column justify-content-center">
                       What if I have more questions?
                     </div>
@@ -1773,7 +1820,7 @@ const Home = () => {
                       +
                     </div>
                   </div>
-                  <div>
+                  <div className="divNone">
                     <div className="border border-black w-100"></div>
                     <p className="ptagDiv px-3">
                       Reach out to our support team anytime!
@@ -1794,7 +1841,11 @@ const Home = () => {
               >
                 <div className="col">
                   <div className="toggleDiv">
-                    <div className="child1Div px-3 ">
+                    <div
+                      className="child1Div px-3 "
+                      onClick={toggleHandeler}
+                      key={6}
+                    >
                       <div className="queDiv  d-flex flex-column justify-content-center">
                         How secure is my data?
                       </div>
@@ -1802,7 +1853,7 @@ const Home = () => {
                         +
                       </div>
                     </div>
-                    <div>
+                    <div className="divNone">
                       <div className="border border-black w-100"></div>
                       <p className="ptagDiv px-3">
                         We use state-of-the-art encryption to protect your
@@ -1814,7 +1865,11 @@ const Home = () => {
 
                 <div className="col">
                   <div className="toggleDiv my-1">
-                    <div className="child1Div px-3 ">
+                    <div
+                      className="child1Div px-3 "
+                      onClick={toggleHandeler}
+                      key={7}
+                    >
                       <div className="queDiv  d-flex flex-column justify-content-center">
                         Can I create my own community?
                       </div>
@@ -1822,7 +1877,7 @@ const Home = () => {
                         +
                       </div>
                     </div>
-                    <div>
+                    <div className="divNone">
                       <div className="border border-black w-100"></div>
                       <p className="ptagDiv px-3">
                         Yes! Start your own community and invite others to join!
@@ -1833,7 +1888,11 @@ const Home = () => {
 
                 <div className="col">
                   <div className="toggleDiv">
-                    <div className="child1Div px-3 ">
+                    <div
+                      className="child1Div px-3 "
+                      onClick={toggleHandeler}
+                      key={8}
+                    >
                       <div className="queDiv  d-flex flex-column justify-content-center">
                         Are there mobile apps available?
                       </div>
@@ -1841,7 +1900,7 @@ const Home = () => {
                         +
                       </div>
                     </div>
-                    <div>
+                    <div className="divNone">
                       <div className="border border-black w-100"></div>
                       <p className="ptagDiv px-3">
                         We have apps for both iOS and Android platforms!
@@ -1852,7 +1911,7 @@ const Home = () => {
 
                 <div className="col">
                   <div className="toggleDiv my-1">
-                    <div className="child1Div px-3 ">
+                    <div className="child1Div px-3" onClick={toggleHandeler}>
                       <div className="queDiv  d-flex flex-column justify-content-center">
                         How can I report inappropriate content?
                       </div>
@@ -1860,7 +1919,7 @@ const Home = () => {
                         +
                       </div>
                     </div>
-                    <div>
+                    <div className="divNone">
                       <div className="border border-black w-100"></div>
                       <p className="ptagDiv px-3">
                         Use the report button or contact our moderation team
@@ -1872,15 +1931,15 @@ const Home = () => {
 
                 <div className="col">
                   <div className="toggleDiv">
-                    <div className="child1Div px-3 ">
-                      <div className="queDiv  d-flex flex-column justify-content-center">
+                    <div className="child1Div px-3 " onClick={toggleHandeler}>
+                      <div className="queDiv d-flex flex-column justify-content-center">
                         Can i delete my account?
                       </div>
                       <div className="plusDiv  d-flex flex-column justify-content-center">
                         +
                       </div>
                     </div>
-                    <div>
+                    <div className="divNone">
                       <div className="border border-black w-100"></div>
                       <p className="ptagDiv px-3">
                         Yes, you can delete your account and all associated data
