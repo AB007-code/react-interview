@@ -303,3 +303,59 @@
   transform: rotate(90deg);
   transition: all 0.3s linear 0s;
 }
+.brandIconDiv {
+  height: 45px;
+  width: 45px;
+  background-color: #2c2e36;
+  transition: background-color 0.3s linear 0s;
+}
+.fbIconHover:hover {
+  background-color: #1877f2;
+  transition: background-color 0.3s linear 0s;
+}
+.twtIconHover:hover {
+  background-color: #1da1f2;
+  transition: background-color 0.3s linear 0s;
+}
+.instaIconHover:hover {
+  background-color: #e4405f;
+  transition: background-color 0.3s linear 0s;
+}
+.youtubeIconHover:hover {
+  background-color: #ff0000;
+  transition: background-color 0.3s linear 0s;
+}
+.ulDiv {
+  list-style-type: none;
+  padding: 0px;
+  color: #a8a9b2;
+  font-size: 1.2em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.liHover {
+  cursor: pointer;
+}
+
+.liHover:hover {
+  color: white;
+}
+.spanDiv1 {
+  color: #a8a9b2;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.spanDiv3 {
+  cursor: pointer;
+  height: auto;
+}
+.spanDiv3:hover {
+  color: white;
+}
+.copyRightMainDiv {
+  color: #a0a1a5;
+  font-size: 1.15em;
+  border-top: 0.1px solid rgba(134, 134, 134, 0.599);
+}

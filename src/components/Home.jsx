@@ -40,11 +40,16 @@ import container2 from "../image/Container2.png";
 import container3 from "../image/Container3.png";
 import container4 from "../image/Container4.png";
 import container5 from "../image/Container5.png";
+import logo2 from "../image/Logocommunion2.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaRegDotCircle } from "react-icons/fa";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import contact from "../image/contact.png";
 import fan from "../image/fan.png";
 import stati from "../image/static.png";
@@ -138,15 +143,17 @@ const Home = () => {
   const toggleHandeler = (e) => {
     let childDiv = e.target.closest(".child1Div");
     let doc = document.querySelectorAll(".child1Div");
+    console.log(doc);
     doc.forEach((ele) => {
       if (ele != childDiv) {
         ele.closest(".toggleDiv").children[1].style.display = "none";
         ele.closest(".toggleDiv").style.height = "100px";
+        ele.children[1].textContent = "+";
+        ele.children[1].style.fontSize = "2em";
       }
     });
     let divNone = e.target.closest(".toggleDiv").children[1];
     let toggleDiv = e.target.closest(".toggleDiv");
-    // console.log(toggleDiv.children[0].children[1]);
     let plusDiv = toggleDiv.children[0].children[1];
     if (divNone.style.display == "none") {
       divNone.style.display = "block";
@@ -1954,10 +1961,117 @@ const Home = () => {
         </div>
       </div>
 
-      <div
-        style={{ height: "600px", backgroundColor: "#14161F" }}
-        className="border"
-      ></div>
+      {/*footer section*/}
+      <div style={{ height: "620px", backgroundColor: "#14161F" }}>
+        <div className="container h-100">
+          <div className="row h-75">
+            <div className="col-4 p-2 d-flex flex-column justify-content-center">
+              <div className="h-75 d-flex flex-column justify-content-around">
+                <div style={{ height: "70px", width: "100%" }}>
+                  <img
+                    src={logo2}
+                    className="h-100 object-fit-contain"
+                    width="70%"
+                  />
+                </div>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    lineHeight: "26px",
+                    color: "#FEFEFE",
+                  }}
+                >
+                  Discover the power of connection with Communion. Uniting
+                  diverse communities through spirituality and innovation, we
+                  foster inclusivity, collaboration, and social cohesion for a
+                  better world.
+                </div>
+                <div
+                  className="d-flex justify-content-around flex-wrap align-content-center"
+                  style={{ height: "80px", width: "60%" }}
+                >
+                  <div className="brandIconDiv fbIconHover text-white fs-5 rounded-circle d-flex flex-wrap justify-content-center align-content-center">
+                    <FaFacebookF />
+                  </div>
+                  <div className="brandIconDiv twtIconHover text-white fs-5 rounded-circle d-flex flex-wrap justify-content-center align-content-center">
+                    <FaTwitter />
+                  </div>
+                  <div className="brandIconDiv instaIconHover text-white fs-5 rounded-circle d-flex flex-wrap justify-content-center align-content-center">
+                    <FaInstagram />
+                  </div>
+                  <div className="brandIconDiv youtubeIconHover text-white fs-5 rounded-circle d-flex flex-wrap justify-content-center align-content-center">
+                    <FaYoutube />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-4 p-2 d-flex flex-column justify-content-center my-1 flex-wrap align-content-end">
+              <div
+                className="d-flex flex-column justify-content-center w-50"
+                style={{ height: "65%" }}
+              >
+                <h5 className="text-white mt-4" style={{ fontWeight: "700" }}>
+                  Company
+                </h5>
+                <div style={{ height: "80%" }} className="mt-3">
+                  <ul className="ulDiv">
+                    <li>
+                      <span className="liHover">Home</span>
+                    </li>
+                    <li>
+                      <span className="liHover">Communities</span>
+                    </li>
+                    <li>
+                      <span className="liHover">Events</span>
+                    </li>
+                    <li>
+                      <span className="liHover">Leaders</span>
+                    </li>
+                    <li>
+                      <span className="liHover">Support</span>
+                    </li>
+                    <li>
+                      <span className="liHover">Profile</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-4 p-2 d-flex flex-column justify-content-center my-1 flex-wrap align-content-center">
+              <div
+                className="d-flex flex-column justify-content-center w-50"
+                style={{ height: "65%" }}
+              >
+                <h5 className="text-white mt-4" style={{ fontWeight: "700" }}>
+                  Company
+                </h5>
+                <div style={{ height: "80%" }} className="mt-3 spanDiv1">
+                  <span className="liHover">contact@communionhub.org</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-25 d-flex pt-5 justify-content-between copyRightMainDiv">
+            <div
+              className="w-50"
+              //   style={{ color: "#A0A1A5", fontSize: "1.15em" }}
+            >
+              Copyright © 2025. All right reserved to Communion
+            </div>
+            <div className="w-50 d-flex justify-content-end">
+              <div>
+                <span className="me-3 spanDiv3">Privacy Policy</span>
+              </div>
+              <div>
+                <span className="spanDiv3">Terms & Conditions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
